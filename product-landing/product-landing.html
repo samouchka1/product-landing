@@ -32,6 +32,7 @@
             background-image: url(product-navbar.jpg);
             background-size: cover;
             filter: grayscale(75%);
+            z-index: 1;
         }
 
             #nav-bar a {
@@ -64,7 +65,7 @@
             margin: auto;
             margin-top: 8.7rem;
             /* box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.699); */
-            width: 70%;
+            width: 80%;
             height: auto;
         }
             @media (max-width: 75rem){
@@ -80,8 +81,9 @@
             margin: auto;
             margin-bottom: 1rem;
             margin-top: 1rem;
-            width: 70%;
+            width: 80%;
             height: auto;
+            z-index: 0;
         }
             @media (max-width: 75rem){
                 #video {
@@ -133,6 +135,12 @@
                     font-size: 1rem;
                     font-weight: 600;
                     margin-top: 1rem;
+                }
+            }
+        
+            @media (max-width: 75rem) {
+                #email-label {
+                    text-align: center;
                 }
             }
 
