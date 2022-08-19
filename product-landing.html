@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing</title>
+    <Style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url(product-bg.jpg);
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        #nav-bar {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            align-items: center;
+            justify-content: center; /*space-evenly*/
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            padding: 2rem;
+            border-radius: 15px;
+            border: solid black;
+            background-image: url(product-navbar.jpg);
+            background-size: cover;
+            filter: grayscale(75%);
+            z-index: 1;
+        }
+
+            #nav-bar a {
+                    text-decoration: none;
+                    color: rgb(255, 255, 255);
+                    font-family: sans-serif;
+                    font-size: 1.7rem;
+                    font-weight: 700;
+                    margin: 12rem; /*no margin if space-evenly*/
+                    padding: .7rem;
+                }
+
+                @media (max-width: 75rem) {
+                    #nav-bar a{
+                        margin: 1rem;
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                    }
+                }
+                    #nav-bar a:hover {
+                        background-color: rgb(255, 255, 255);
+                        color: rgb(0, 0, 0);
+                        transition: 0.25s ease-in;
+                        border-radius: 15px;
+                        transition: .5s;
+                    }
+
+        #header-img {
+            display: block;
+            margin: auto;
+            margin-top: 8.7rem;
+            /* box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.699); */
+            width: 80%;
+            height: auto;
+        }
+            @media (max-width: 75rem){
+                #header-img {
+                    margin-top: 8.8rem;
+                    width: 95%;
+                    height: auto;
+                }
+            }
+
+        #video {
+            display: block;
+            margin: auto;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            width: 80%;
+            height: auto;
+            z-index: 0;
+        }
+            @media (max-width: 75rem){
+                #video {
+                    width: 95%;
+                    height: auto;
+                }
+            }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
+            width: auto;
+            padding: 5rem;
+            column-gap: 1.2rem;
+            background-color: rgba(185, 185, 185, 0.685);
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+            @media (max-width: 75rem){
+                .container{
+                    flex-direction: column;
+                    padding: 1.5rem;
+                    font-size: 1rem;
+                    margin-top: 1rem;
+                }
+            }
+
+        #form {
+            display: block;
+            margin: auto;
+            margin-top: 2rem;
+            width: 20%;
+            padding: 2rem;
+            padding-top: 1rem;
+            color: black;
+            background-color: rgba(185, 185, 185, 0.685);
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: sans-serif;
+            text-align: center;
+        }
+            @media (max-width: 75rem){
+                #form {
+                    width: 40%;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-top: 1rem;
+                }
+            }
+
+            @media (max-width: 75rem) {
+                #email {
+                    left: 0;
+                }
+            }
+
+    </Style>
+</head>
+<body>
+
+    <header id="header">
+        <nav id="nav-bar">
+            <a class="nav-link" href="#item1">item1</a>
+            <a class="nav-link" href="#item2">item2</a>
+            <a class="nav-link" href="#item3">item3</a>
+        </nav>
+        <img id="header-img" src="product-main.jpg" alt="picture of product">
+    </header>
+
+    <section>
+
+        <video id="video" controls preload="metadata">
+            <source src="product-video.mp4" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <div id="item1"><h3>item1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quas nobis ipsam cum doloribus expedita commodi,
+                 provident repellat minus, nesciunt voluptates possimus. Aliquid, saepe reiciendis. Lorem ipsum dolor sit amet 
+                 consectetur adipisicing elit. Tenetur, porro. Odit rerum animi deserunt amet aliquam quos mollitia corrupti totam.</p>
+            </div>
+            <div id="item2"><h3>item2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore et aspernatur eveniet accusantium, maxime est,
+                 error a saepe illo facere cum! Ratione laudantium quod iure? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Vero, nemo. Molestias fugit incidunt modi! Itaque, autem doloribus! Animi, omnis pariatur.</p>
+            </div>
+            <div id="item3"><h3>item3</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, dolore aut, nisi quo autem atque architecto aperiam
+                 laboriosam blanditiis cumque consequatur rem vel deleniti necessitatibus? Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Velit ea maiores ducimus eius esse ratione consequuntur dolorum neque fugit quo!</p>
+            </div>
+        </div>
+
+        <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST"><!--method="POST" very important-->
+            <p>Enter your email for more info!</p>
+            <label for="email" id="email-label"><input type="email" placeholder="Enter email" required id="email" name="email"></label> <!--name="email" very important-->
+            <input id="submit" type="submit" value="submit">
+        </form>
+
+    </section>
+</body>
+</html>
